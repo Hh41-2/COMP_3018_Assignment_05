@@ -6,14 +6,15 @@ dotenv.config();
 
 import morgan from "morgan";
 import eventRoutes from "./api/v1/routes/eventRoutes";
-// In your app.ts
 import { getHelmetConfig } from "../src/config/helmetConfig";
+import cors from "cors";
 
 
 // Initialize Express application
 const app: Express = express();
 
 app.use(getHelmetConfig());
+app.use(cors(getCorsOptions()));
 
 app.use(express.json());
 app.use(morgan("combined"));
