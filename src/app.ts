@@ -8,6 +8,7 @@ import morgan from "morgan";
 import eventRoutes from "./api/v1/routes/eventRoutes";
 import { getHelmetConfig } from "../src/config/helmetConfig";
 import cors from "cors";
+import { getCorsOptions } from "../src/config/corsConfig";
 
 
 // Initialize Express application
