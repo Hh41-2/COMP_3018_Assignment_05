@@ -1,5 +1,5 @@
 {
-  "name": "comp_3018_assignment_03",
+  "name": "comp_3018_assignment_05",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -13,15 +13,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Hh41-2/COMP_3018_Assignment_03.git"
+    "url": "git+https://github.com/Hh41-2/COMP_3018_Assignment_05.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Hh41-2/COMP_3018_Assignment_03/issues"
+    "url": "https://github.com/Hh41-2/COMP_3018_Assignment_05/issues"
   },
-  "homepage": "https://github.com/Hh41-2/COMP_3018_Assignment_03#readme",
+  "homepage": "https://github.com/Hh41-2/COMP_3018_Assignment_05#readme",
   "devDependencies": {
     "@redocly/cli": "^2.24.1",
     "@types/cors": "^2.8.19",
