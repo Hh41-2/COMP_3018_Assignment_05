@@ -118,38 +118,8 @@ Response (200 OK)
 {
   "message": "Event retrieved",
   "count": 1,
-  "data": {
-    "allEvent": [
-      {
-        "id": "tZPXEZr971A7cyN6HRBK",
-        "name": "sample event 1",
-        "date": {
-          "_seconds": 1797762600,
-          "_nanoseconds": 0
-        },
-        "capacity": 100,
-        "registrationCount": 0,
-        "status": "active",
-        "category": "conference",
-        "createdAt": "2026-03-22T04:25:16.494Z",
-        "updatedAt": "2026-03-22T04:25:16.494Z"
-      }
-    ]
-  }
-}
-
-### Get a single event with id 
-Copy and paste the command below into your web: 
-http://localhost:3000/api/v1/events/tZPXEZr971A7cyN6HRBK
-
-Copy and paste the command below into your terminal:
-curl http://localhost:3000/api/v1/events/tZPXEZr971A7cyN6HRBK
-
-Response (200 OK)
-{
-  "message": "Event retrieved",
-  "data": {
-    "eventById": {
+  "data": [
+    {
       "id": "tZPXEZr971A7cyN6HRBK",
       "name": "sample event 1",
       "date": {
@@ -163,5 +133,39 @@ Response (200 OK)
       "createdAt": "2026-03-22T04:25:16.494Z",
       "updatedAt": "2026-03-22T04:25:16.494Z"
     }
+  ]
+}
+
+### Get a single event with id 
+Copy and paste the command below into your web: 
+http://localhost:3000/api/v1/events/tZPXEZr971A7cyN6HRBK
+
+Copy and paste the command below into your terminal:
+curl http://localhost:3000/api/v1/events/tZPXEZr971A7cyN6HRBK
+
+Response (200 OK)
+{
+  "message": "Event retrieved",
+  "data": {
+    "id": "tZPXEZr971A7cyN6HRBK",
+    "name": "sample event 1",
+    "date": {
+      "_seconds": 1797762600,
+      "_nanoseconds": 0
+    },
+    "capacity": 100,
+    "registrationCount": 0,
+    "status": "active",
+    "category": "conference",
+    "createdAt": "2026-03-22T04:25:16.494Z",
+    "updatedAt": "2026-03-22T04:25:16.494Z"
   }
 }
+
+### Link to Public Documentation
+Full API documentation is available at:
+https://hh41-2.github.io/COMP_3018_Assignment_05/
+
+### Local Documentation Access
+When running locally, access the API documentation at:
+http://localhost:3000/api-docs

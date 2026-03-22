@@ -62,7 +62,7 @@ export const getAllEvent = async (req: Request, res: Response, next: NextFunctio
         res.status(HTTP_STATUS.OK).json({
             message: "Event retrieved",
             count: allEvent.length,
-            data: {allEvent}
+            data: allEvent
         });
     } catch (error: unknown) {
         next(error);
@@ -79,7 +79,7 @@ export const getAllEvent = async (req: Request, res: Response, next: NextFunctio
 export const getEventById = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
         const eventById = await eventService.getEventById(req.params.id);
-        res.status(HTTP_STATUS.OK).json(successResponse("Event retrieved", {eventById}));
+        res.status(HTTP_STATUS.OK).json(successResponse("Event retrieved", eventById));
     } catch (error: unknown) {
         next(error);
     }
