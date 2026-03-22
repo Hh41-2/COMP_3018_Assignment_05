@@ -15,6 +15,32 @@ const swaggerOptions: swaggerJsdoc.Options = {
                 description: "Local server",
             },
         ],
+        components: {
+            schemas: {
+                Event: {
+                    type: "object",
+                    properties: {
+                        id: {type: 'string'},
+                        name: {type: 'string'},
+                        date: {type: 'string', format: 'date-time'},
+                        capacity: {type: 'number'},
+                        registrationCount: { type: 'number'},
+                        status: {type: 'string', enum: ['active', 'cancelled', 'completed']},
+                        category: {type: 'string', enum: ['conference', 'workshop', 'meetup', 'seminar', 'general']},
+                    },
+                },
+                Events: {
+                    type: "array",
+                    items: {$ref: "#/components/schemas/Event"},
+                },
+                Error: {
+                    type: "object",
+                    properties: {
+                        message: {type: "string"}
+                    }
+                }
+            },
+        },
     },
     apis: ["./src/api/v1/routes/*.ts", "./src/api/v1/validations/*.ts"], // Path to the API docs and schemas
 };

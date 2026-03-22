@@ -30,7 +30,7 @@ router.get("/health", healthCheck);
  *                 events:
  *                   type: array
  *                   items:
- *                     $ref: '#/components/validations/Events'
+ *                     $ref: '#/components/schemas/Events'
  */
 router.get("/events", getAllEvent);
 
@@ -58,13 +58,13 @@ router.get("/events", getAllEvent);
  *                 message:
  *                   type: string
  *                 event:
- *                   $ref: '#/components/validations/Event'
+ *                   $ref: '#/components/schemas/Event'
  *       '404':
  *         description: Event not found
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/validations/Error'       
+ *               $ref: '#/components/schemas/Error'       
  */
 router.get(
        "/events/:id",
@@ -110,7 +110,7 @@ router.get(
  *               status:
  *                 type: string
  *                 enum: ["active", "cancelled", "completed"]
- *                description: "Event status (optional)"
+ *                 description: "Event status (optional)"
  *                 default: "active"
  *                 example: "active"
  *               category:
@@ -129,13 +129,13 @@ router.get(
  *                 message:
  *                   type: string
  *                 event:
- *                   $ref: '#/components/validations/Event'
+ *                   $ref: '#/components/schemas/Event'
  *       '400':
  *         description: Invalid input data
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/validations/Error'     
+ *               $ref: '#/components/schemas/Error'     
  */
 router.post(
        "/events",
@@ -202,19 +202,19 @@ router.post(
  *                 message:
  *                   type: string
  *                 event:
- *                   $ref: '#/components/validations/Event'
+ *                   $ref: '#/components/schemas/Event'
  *       '400':
  *         description: Invalid input data
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/validations/Error'    
+ *               $ref: '#/components/schemas/Error'    
  *       '404':
  *         description: Event not found
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/validations/Error' 
+ *               $ref: '#/components/schemas/Error' 
  */
 router.put(
        "/events/:id",
@@ -250,7 +250,7 @@ router.put(
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/validations/Error'       
+ *               $ref: '#/components/schemas/Error'       
  */
 router.delete(
        "/events/:id",
