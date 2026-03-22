@@ -6,9 +6,10 @@ dotenv.config();
 
 import morgan from "morgan";
 import eventRoutes from "./api/v1/routes/eventRoutes";
-import { getHelmetConfig } from "../src/config/helmetConfig";
+import { getHelmetConfig } from "./config/helmetConfig";
 import cors from "cors";
-import { getCorsOptions } from "../src/config/corsConfig";
+import { getCorsOptions } from "./config/corsConfig";
+import setupSwagger from "./config/swagger";
 
 
 // Initialize Express application
@@ -19,6 +20,8 @@ app.use(cors(getCorsOptions()));
 
 app.use(express.json());
 app.use(morgan("combined"));
+
+setupSwagger(app);
 
 // Define a route
 app.get("/", (req, res) => {

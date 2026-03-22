@@ -2,7 +2,7 @@ import express, {Router} from "express";
 import { getAllEvent, healthCheck } from "../controllers/eventController";
 import { validateRequest } from "../middleware/validateRequest";
 import * as productController from "../controllers/eventController";
-import { eventSchemas } from "../validation/eventValidation";
+import { eventSchemas } from "../validations/eventValidation";
 const router: Router = express.Router();
 
 
