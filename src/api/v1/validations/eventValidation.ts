@@ -1,6 +1,51 @@
 import Joi from "joi";
 
-// Post operation schemas organized by request part
+/**
+ * @openapi
+ * components:
+ *   schemas:
+ *     Events:
+ *       type: object
+ *       required:
+ *         - id
+ *         - name
+ *         - date
+ *         - capacity
+ *       properties:
+ *         id:
+ *           type: string
+ *           description: Unique identifier for the user
+ *         name:
+ *           type: string
+ *           minLength: 3
+ *           example: "RRC student meeting"
+ *         date:
+ *           type: string
+ *           format: date-time
+ *           description: The date of the event
+ *           example: "2026-04-15T19:00:00Z"
+ *         capacity:
+ *           type: number
+ *           minimum: 3
+ *           example: 500
+ *           description: Capacity of the event
+ *         registrationCount:
+ *           type: number
+ *           minimum: 0
+ *           description: Number of registrations must be less than or equal to capacity (optional)
+ *           example: 30
+ *         status:
+ *           type: string
+ *           enum: ["active", "cancelled", "completed"]
+ *           description: Event status (optional)
+ *           default: "active"
+ *           example: "completed"
+ *         category:
+ *           type: string
+ *           enum: ["conference", "workshop", "meetup", "seminar", "general"]
+ *           description: Event category (optional)
+ *           example: "workshop"
+ */
 export const eventSchemas = {
     // POST /events - Create new event
     create: {
