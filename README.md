@@ -85,8 +85,83 @@ This will start the local server running on port 3000.
 
 7. Test your API
 Open your web browser and paste the command below:
-http://localhost:3000/api/v1
+http://localhost:3000
 
 This will print 'Hello, World'. This means its working correctly.
 
 To test various endpoints, use Postman or Bruno.
+
+## API Request Examples
+### Health Check
+Copy and paste the command below into your web: 
+http://localhost:3000/api/v1/health
+
+Copy and paste the command below into your terminal:
+curl http://localhost:3000/api/v1/health
+
+Response (200 OK)
+{
+  "status": "OK",
+  "uptime": 9.3270499,
+  "timestamp": "2026-03-22T22:49:01.742Z",
+  "version": "1.0.0"
+}
+
+### Get all events
+Copy and paste the command below into your web: 
+http://localhost:3000/api/v1/events
+
+Copy and paste the command below into your terminal:
+curl http://localhost:3000/api/v1/events
+
+Response (200 OK)
+{
+  "message": "Event retrieved",
+  "count": 1,
+  "data": {
+    "allEvent": [
+      {
+        "id": "tZPXEZr971A7cyN6HRBK",
+        "name": "sample event 1",
+        "date": {
+          "_seconds": 1797762600,
+          "_nanoseconds": 0
+        },
+        "capacity": 100,
+        "registrationCount": 0,
+        "status": "active",
+        "category": "conference",
+        "createdAt": "2026-03-22T04:25:16.494Z",
+        "updatedAt": "2026-03-22T04:25:16.494Z"
+      }
+    ]
+  }
+}
+
+### Get a single event with id 
+Copy and paste the command below into your web: 
+http://localhost:3000/api/v1/events/tZPXEZr971A7cyN6HRBK
+
+Copy and paste the command below into your terminal:
+curl http://localhost:3000/api/v1/events/tZPXEZr971A7cyN6HRBK
+
+Response (200 OK)
+{
+  "message": "Event retrieved",
+  "data": {
+    "eventById": {
+      "id": "tZPXEZr971A7cyN6HRBK",
+      "name": "sample event 1",
+      "date": {
+        "_seconds": 1797762600,
+        "_nanoseconds": 0
+      },
+      "capacity": 100,
+      "registrationCount": 0,
+      "status": "active",
+      "category": "conference",
+      "createdAt": "2026-03-22T04:25:16.494Z",
+      "updatedAt": "2026-03-22T04:25:16.494Z"
+    }
+  }
+}
