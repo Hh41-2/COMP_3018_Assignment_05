@@ -1,4 +1,3 @@
-// config/corsConfig.ts
 export const getCorsOptions = () => {
     const isDevelopment = process.env.NODE_ENV === "development";
 
@@ -16,5 +15,6 @@ export const getCorsOptions = () => {
         credentials: true,
         methods: ["GET", "POST", "PUT", "DELETE"],
         allowedHeaders: ["Content-Type", "Authorization"],
+        maxAge: 3600,
     };
 };
