@@ -1,4 +1,4 @@
-import { db } from "../../../../config/firebaseConfig";
+import { db } from "../../../config/firebaseConfig";
 import { DocumentReference } from "firebase-admin/firestore";
 import { QuerySnapshot } from "firebase-admin/firestore";
 import { Event } from "../models/eventModel";

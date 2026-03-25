@@ -1,13 +1,27 @@
 import express, { Express } from "express";
+import dotenv from "dotenv";
+
+// Load environment variables BEFORE your internal imports!
+dotenv.config();
+
 import morgan from "morgan";
 import eventRoutes from "./api/v1/routes/eventRoutes";
+import { getHelmetConfig } from "./config/helmetConfig";
+import cors from "cors";
+import { getCorsOptions } from "./config/corsConfig";
+import setupSwagger from "./config/swagger";
 
 
 // Initialize Express application
 const app: Express = express();
 
+app.use(getHelmetConfig());
+app.use(cors(getCorsOptions()));
+
 app.use(express.json());
 app.use(morgan("combined"));
+
+setupSwagger(app);
 
 // Define a route
 app.get("/", (req, res) => {
