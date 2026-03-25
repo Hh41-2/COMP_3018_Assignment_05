@@ -10,7 +10,6 @@ export const getHelmetConfig = () => {
         hidePoweredBy: true, // Always hide server info
         noSniff: true, // Always prevent MIME sniffing
         PermittedCrossDomainPolicies: { permittedPolicies: "none" },
-
     };
 
     if (isDevelopment) {

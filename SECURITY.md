@@ -22,13 +22,41 @@ Given Examples:
 
 3. **frameguard: { action: "deny" }** - Prevents this API from clickjacking attacks 
 
-4. **referrerPolicy: { policy: "no-referrer" }** - 
+4. **referrerPolicy: { policy: "no-referrer" }** - Prvents other websites from seeing my API in their server
 
-3. **PermittedCrossDomainPolicies: { permittedPolicies: "none" }: "none"** - Blocked other domains from accessing this API without permission
+5. **PermittedCrossDomainPolicies: { permittedPolicies: "none" }: "none"** - Blocked other domains from accessing this API without permission
 
-4. **crossOriginResourcePolicy: { policy: "cross-origin" }** - Prvents other websites from accessing my API
 
 ### Sources
 
 1. Helmet.js Official Documentation - https://helmetjs.github.io/
 2. OWASP Secure Headers Project - https://owasp.org/www-project-secure-headers/
+
+
+## CORS Configuration
+
+### Configuration Applied
+
+\`\`\`typescript 
+CORS { 
+        origin: process.env.ALLOWED_ORIGINS?.split(",") || [],
+        credentials: true,
+        methods: ["GET", "POST", "PUT", "DELETE"],
+        allowedHeaders: ["Content-Type", "Authorization"],
+    };
+ \`\`\`
+
+### Justification
+
+1. **origin: process.env.ALLOWED_ORIGINS?.split(",") || []** - Only allows specified domains to access my API reading from environment variable
+
+2. **credentials: true** - Enabled to allow API to use cookies or Bearer tokens for authentication
+
+3. **methods: ["GET", "POST", "PUT", "DELETE"]** - List of HTTP methods that are allowed 
+
+4. **allowedHeaders: ["Content-Type", "Authorization"]** - List of Headers which clients are allowed to send with requests
+
+### Sources
+
+1. Cross-Origin Resource Sharing (CORS) - MDN Web Docs - https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS#functional_overview
+2. CORS (Cross-Origin Resource Sharing) - FastAPI - https://fastapi.tiangolo.com/tutorial/cors/#use-corsmiddleware
