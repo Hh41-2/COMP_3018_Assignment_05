@@ -142,10 +142,12 @@
                   "type": "object",
                   "properties": {
                     "message": {
-                      "type": "string"
+                      "type": "string",
+                      "example": "Event retrieved"
                     },
                     "count": {
-                      "type": "number"
+                      "type": "number",
+                      "example": 1
                     },
                     "events": {
                       "type": "array",

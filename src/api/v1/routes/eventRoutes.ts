@@ -25,8 +25,10 @@ router.get("/health", healthCheck);
  *               properties:
  *                 message:
  *                   type: string
+ *                   example: "Event retrieved"
  *                 count:
  *                   type: number
+ *                   example: 1
  *                 events:
  *                   type: array
  *                   items:
